@@ -1,17 +1,17 @@
-{ "height":40,
+{ "height":64,
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt1D0OgCAMhuFeQ00w6uLP4v1PZwdHKTJA0bzDE4uSgHwpQUQCAAA\/tGbM7VSvBqP2\/JdJzWox6pLrj4nvm9rVYdSe5xfLsXS+qXN7yvfN+9piObaYb+3+Pe+ndd94929Ovi32LwAAQEmSGLfqK\/sEvF1D3bxv",
+         "data":"eJzt1bsOwiAYgNG+hprUqIuXxfd\/Ohk6mUphoAicL\/kj6SLHEpynaZr\/eEpX28fPz8\/Pz8\/Pz7+\/\/56xn0OYY5hTZN2aP2cuYa5hbpF1y\/7zxn4eYZ5hXpF1y\/6c85\/yvBX\/1ntfO\/8pz1vxp86vcz7i+e\/t\/n8vn7H\/w97v\/5zzP+L9v\/eUrraPn5+fn5+fn5+fn38M\/\/f3r+2ndLXf79bvUrra1pHPPz8\/f12\/JEmSJEmSJEnqrw8DRbxv",
          "encoding":"base64",
-         "height":40,
+         "height":64,
          "name":"Ground",
          "offsetx":-33,
          "offsety":122,
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":40,
+         "width":64,
          "x":0,
          "y":0
         }],
@@ -26,5 +26,5 @@
         }],
  "tilewidth":32,
  "version":1,
- "width":40
+ "width":64
 }

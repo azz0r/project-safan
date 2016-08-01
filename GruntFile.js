@@ -62,20 +62,20 @@ module.exports = function (grunt) {
         path: 'http://localhost:8080/index.html'
       }
     },
-    traceur: {
-      default: {
-        files:{
-          'dist/js/game.js': ['src/js/game.js']
+    es6transpiler: {
+      dist: {
+        files: {
+          'dist/js/game.js': 'src/js/game.js'
         }
-      },
+      }
     }
   });
 
   grunt.registerTask('default', [
     'clean',
-    'traceur',
-    'concat',
     'copy',
+    // 'es6transpiler',
+    'concat',
     'connect',
     'open',
     'watch'

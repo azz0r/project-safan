@@ -1,5 +1,5 @@
 {
-  "name": "Project Safan",
+  "name": "ProjectSafan",
   "version": "0.0.1",
   "description": "Phaser top down game",
   "main": "dist/index.html",
@@ -14,5 +14,8 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-open": "~0.2.3"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5"
   }
 }

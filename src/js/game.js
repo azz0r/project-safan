@@ -18,26 +18,27 @@ var layer;
 
 var cursors;
 var sprite;
+var level = 1;
 
 function create() {
 
   game.physics.startSystem(Phaser.Physics.ARCADE);
 
-  map = game.add.tilemap('desert');
+  if (level === 1) {
 
-  map.addTilesetImage('Desert', 'tiles');
+    // ground floor
+    map = game.add.tilemap('desert');
+    map.addTilesetImage('Desert', 'tiles');
+    layer = map.createLayer('Ground');
+    layer.resizeWorld();
 
-  layer = map.createLayer('Ground');
+    sprite = game.add.sprite(450, 80, 'car');
+    sprite.anchor.setTo(0.5, 0.5);
+  }
 
-  layer.resizeWorld();
-
-  sprite = game.add.sprite(450, 80, 'car');
-  sprite.anchor.setTo(0.5, 0.5);
-
+  // standard per instance
   game.physics.enable(sprite);
-
   game.camera.follow(sprite);
-
   cursors = game.input.keyboard.createCursorKeys();
 }
 

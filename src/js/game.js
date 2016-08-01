@@ -9,7 +9,9 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, '',
 
 function preload() {
   game.load.tilemap('desert', 'assets/desert.json', null, Phaser.Tilemap.TILED_JSON);
-  game.load.image('tiles', 'assets/desert.png');
+  game.load.tilemap('sewers', 'assets/sewers.json', null, Phaser.Tilemap.TILED_JSON);
+  game.load.image('desert', 'assets/desert.png');
+  game.load.image('sewers', 'assets/sewers.png');
   game.load.image('car', 'assets/player.png');
 }
 
@@ -21,22 +23,24 @@ var sprite;
 var level = 1;
 
 function create() {
-
-  game.physics.startSystem(Phaser.Physics.ARCADE);
-
   if (level === 1) {
-
-    // ground floor
     map = game.add.tilemap('desert');
-    map.addTilesetImage('Desert', 'tiles');
+    map.addTilesetImage('Desert', 'desert');
     layer = map.createLayer('Ground');
-    layer.resizeWorld();
-
-    sprite = game.add.sprite(450, 80, 'car');
-    sprite.anchor.setTo(0.5, 0.5);
+  } else {
+    map = game.add.tilemap('sewers');
+    map.addTilesetImage('Sewers', 'sewers');
+    layer = map.createLayer('Ground');
   }
 
-  // standard per instance
+  layer.resizeWorld();
+
+  // player character
+  sprite = game.add.sprite(450, 80, 'car');
+  sprite.anchor.setTo(0.5, 0.5);
+
+  // standard per game
+  game.physics.startSystem(Phaser.Physics.ARCADE);
   game.physics.enable(sprite);
   game.camera.follow(sprite);
   cursors = game.input.keyboard.createCursorKeys();
@@ -49,13 +53,10 @@ function randomiseTiles() {
 }
 
 function update() {
-  if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
-  {
-      sprite.x -= 4;
-  }
-  else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
-  {
-      sprite.x += 4;
+  if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+    sprite.x -= 4;
+  } else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+    sprite.x += 4;
   }
 
   if (game.input.keyboard.isDown(Phaser.Keyboard.UP))

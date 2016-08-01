@@ -50,7 +50,7 @@ module.exports = function (grunt) {
         src: [
           "src/js/**/*.js"
         ],
-        dest: 'dist/js/game.min.js'
+        dest: 'dist/js/game.js'
       }
     },
     watch: {
@@ -61,11 +61,19 @@ module.exports = function (grunt) {
       dev: {
         path: 'http://localhost:8080/index.html'
       }
+    },
+    traceur: {
+      default: {
+        files:{
+          'dist/js/game.js': ['src/js/game.js']
+        }
+      },
     }
   });
 
   grunt.registerTask('default', [
     'clean',
+    'traceur',
     'concat',
     'copy',
     'connect',
